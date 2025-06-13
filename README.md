@@ -9,6 +9,7 @@ Labels: Toxicity Dataset, which contains a highly imbalanced class distribution.
 DATASET
 -------
 Source: Wikipedia Talk Labels: Toxicity Dataset
+https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data
 
 Class Distribution:
 - Malicious (1): 10%
