@@ -1,9 +1,9 @@
-# SJ-DECEN_code
+# SJ-DECEN 
 CYBERBULLYING DETECTION USING A CUSTOM DECEN-INSPIRED DEEP LEARNING APPROACH
 ==============================================================================
 
 This repository presents a deep learning pipeline for cyberbullying detection,
-inspired by the DECEN framework. The model is trained on the Wikipedia Talk 
+inspired by the DECEN framework that was originally used for depression detection. The model is trained on the Wikipedia Talk 
 Labels: Toxicity Dataset, which contains a highly imbalanced class distribution.
 
 DATASET
