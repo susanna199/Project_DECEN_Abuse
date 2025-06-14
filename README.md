@@ -3,13 +3,13 @@ CYBERBULLYING DETECTION USING A CUSTOM DECEN-INSPIRED DEEP LEARNING APPROACH
 ==============================================================================
 
 This repository presents a deep learning pipeline for cyberbullying detection,
-inspired by the DECEN framework that was originally used for depression detection. The model is trained on the Wikipedia Talk 
-Labels: Toxicity Dataset, which contains a highly imbalanced class distribution.
+inspired by the DECEN framework that was originally used for depression detection and has been adapted here to incorporate emotion-aware features for enhanced performance in cyberbullying detection. The model is trained on Wikipedia Comments which contains user-generated comments labeled for toxicity. 
 
 DATASET
 -------
-Source: Wikipedia Talk Labels: Toxicity Dataset
-https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data
+Source: https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data
+
+The original dataset includes multi-label classifications (e.g., toxic, severe toxic, obscene, threat, insult, identity hate). This study simplifies the task to binary classification.
 
 Class Distribution:
 - Malicious (1): 10%
