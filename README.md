@@ -34,6 +34,19 @@ DATA PREPARATION STEPS
 4. Export:
    - Saved cleaned datasets for training and evaluation.
 
+BACKGROUND AND RELATED WORK
+---------------------------
+This project is motivated by prior research in two complementary areas:
+1. Antisocial Behavior Detection Using Deep Learning:
+The study by Zinovyeva et al. (2020) demonstrated how deep learning architectures like CNNs, LSTMs, and GRUs could be used to detect antisocial behavior in online discussions. Their methodology was replicated to establish a performance benchmark for cyberbullying detection.
+Zinovyeva, E., Härdle, W. K., & Lessmann, S. (2020). Antisocial online behavior detection using deep learning. Decision Support Systems, 138, 113362. https://doi.org/10.1016/j.dss.2020.113362
+
+2. Emotion-Aware Deep Learning for Depression Detection:
+The proposed model, SJ-DECEN, is based on the DECEN architecture introduced by Yan et al. (2025) for detecting depression from social media content. DECEN integrates token-level emotion recognition with contextual representations to improve classification accuracy. This approach was adapted to the cyberbullying domain by automating emotion labeling through the NRC Emotion Lexicon and exploring fusion strategies that better capture emotional context.
+Yan, Z., Peng, F., & Zhang, D. (2025). DECEN: A deep learning model enhanced by depressive emotions for depression detection from social media content. Decision Support Systems, 114421. https://doi.org/10.1016/j.dss.2025.114421
+
+Our contribution lies in the implementation of the DECEN based framework for cyberbullying detection, rather than modifying or extending the baseline models.
+
 BASELINE MODELS AND RESULTS
 ---------------------------
 Model     | Precision(1) | Recall(1) | F1-Score(1) | Avg Precision | ROC AUC
