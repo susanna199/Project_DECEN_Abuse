@@ -7,14 +7,40 @@ inspired by the DECEN framework that was originally used for depression detectio
 
 DATASET
 -------
-Source: https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data
+**Primary Source**: [Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data)
 
-The original dataset includes multi-label classifications (e.g., toxic, severe toxic, obscene, threat, insult, identity hate). This study simplifies the task to binary classification.
+The original dataset includes three files:
 
-Class Distribution:
-- Malicious (1): 10%
-- Non-Malicious (0): 90%
+* `train.csv`
+* `test.csv`
+* `test_labels.csv`
 
+These files were loaded and merged to isolate labeled and unlabeled samples. The original task involved **multi-label classification** with labels:
+
+* toxic, severe toxic, obscene, threat, insult, identity hate.
+
+For this project, the task has been **simplified to binary classification**:
+
+* **Malicious (1)**: 10%
+* **Non-Malicious (0)**: 90%
+  
+### Preprocessed Datasets Used:
+
+After cleaning and processing, the following refined datasets were used for training and evaluation:
+
+* `train_cleaned_no_punkt.csv`
+* `test_labelled_cleaned_no_punkt.csv`
+* `test_unlabelled_cleaned_no_punkt.csv`
+
+These preprocessed datasets were adapted from the reference paper:
+**Zinovyeva, E., Härdle, W. K., & Lessmann, S. (2020). Antisocial online behavior detection using deep learning. *Decision Support Systems, 138*, 113362.**
+🔗 [DOI: 10.1016/j.dss.2020.113362](https://doi.org/10.1016/j.dss.2020.113362)
+
+**We acknowledge and thank the authors for providing this valuable resource**, which served as the foundation for the models used in both the baseline and proposed architectures.
+
+
+
+  
 DATA PREPARATION STEPS
 -----------------------
 1. Load and Merge:
@@ -37,17 +63,19 @@ DATA PREPARATION STEPS
 BACKGROUND AND RELATED WORK
 ---------------------------
 This project is motivated by prior research in two complementary areas:
-1. Antisocial Behavior Detection Using Deep Learning:
-The study by Zinovyeva et al. (2020) demonstrated how deep learning architectures like CNNs, LSTMs, and GRUs could be used to detect antisocial behavior in online discussions. Their methodology was replicated to establish a performance benchmark for cyberbullying detection.
+1. **Antisocial Behavior Detection Using Deep Learning**
+   Zinovyeva et al. (2020) explored CNNs, LSTMs, and GRUs for detecting antisocial behavior in online forums. Their methods provided baseline benchmarks.
 
-Zinovyeva, E., Härdle, W. K., & Lessmann, S. (2020). Antisocial online behavior detection using deep learning. Decision Support Systems, 138, 113362. https://doi.org/10.1016/j.dss.2020.113362
+   *Zinovyeva, E., Härdle, W. K., & Lessmann, S.* (2020). Antisocial online behavior detection using deep learning. *Decision Support Systems, 138*, 113362.
+   [DOI](https://doi.org/10.1016/j.dss.2020.113362)
 
-2. Emotion-Aware Deep Learning for Depression Detection:
-The proposed model, SJ-DECEN, is based on the DECEN architecture introduced by Yan et al. (2025) for detecting depression from social media content. DECEN integrates token-level emotion recognition with contextual representations to improve classification accuracy. This approach was adapted to the cyberbullying domain by automating emotion labeling through the NRC Emotion Lexicon and exploring fusion strategies that better capture emotional context.
+3. **Emotion-Aware Deep Learning for Depression Detection**
+   DECEN integrates token-level emotion recognition with contextual embeddings to detect depressive content. Its architecture served as the foundation for our SJ-DECEN adaptation.
+   
+   *Yan, Z., Peng, F., & Zhang, D.* (2025). DECEN: A deep learning model enhanced by depressive emotions for depression detection from social media content. *Decision Support Systems*, 114421.
+   [DOI](https://doi.org/10.1016/j.dss.2025.114421)
 
-Yan, Z., Peng, F., & Zhang, D. (2025). DECEN: A deep learning model enhanced by depressive emotions for depression detection from social media content. Decision Support Systems, 114421. https://doi.org/10.1016/j.dss.2025.114421
-
-Our contribution lies in the implementation of the DECEN based framework for cyberbullying detection, rather than modifying or extending the baseline models.
+**We gratefully acknowledge the contributions of both sets of authors whose work directly influenced the methodology and direction of our research.**
 
 BASELINE MODELS AND RESULTS
 ---------------------------
@@ -61,7 +89,7 @@ CNN       |     0.81     |   0.66    |    0.73     |       -       |    -
 
 CUSTOM MODEL (DECEN-INSPIRED ARCHITECTURE)
 ------------------------------------------
-Built on the DECEN structure with 3 major modules:
+Adapted from the DECEN framework, SJ-DECEN consists of three modules:
 
 1. DER MODULE (Detection-Emotion Recognition)
    - BiLSTM-CRF for token-level emotion labeling
